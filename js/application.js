@@ -2,7 +2,11 @@ var app = angular.module('angular-intro', []);
 
 app.controller('MovieFinderController', ['$scope', '$http', function($scope, $http) {
 
+  $scope.searched = false;
+
   $scope.findMovie = function(){
+    $scope.searched = false;
+
     var keys = ['Title', 'Year', 'Rated', 'Released', 'Runtime', 'Genre', 'Director', 'Writer', 'Actors', 'Language', 'Country', 'Awards'];
 
     $scope.keys = keys;
@@ -18,6 +22,8 @@ app.controller('MovieFinderController', ['$scope', '$http', function($scope, $ht
           value: response[keys[i]]
         });
       }
+
+      $scope.searched = true;
     });
   };
 }]);

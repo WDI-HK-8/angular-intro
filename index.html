@@ -18,11 +18,11 @@
           <input class="form-control input-lg" type="text" placeholder="Spiderman" ng-model="title">
         </form>
 
-        <section class="col-xs-6 info">
+        <section class="col-xs-6 info" ng-show="searched">
           <img ng-src="{{ poster }}">
         </section>
 
-        <section class="col-xs-6 info">
+        <section class="col-xs-6 info" ng-show="searched">
           <ul id="details">
             <li ng-repeat="attr in attrs">
               <div class="col-xs-3">
