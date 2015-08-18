@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="angular-intro">
   <head>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -11,22 +11,28 @@
     <link href="css/custom.css" rel="stylesheet">
   </head>
   <body>
-    <div class="container">
+    <div class="container" ng-controller="MovieFinderController">
       <div class="row">
-        <form id="search-form">
-          <h1>Type the movie name... then, hit <span id="enter">enter</span> <img src="assets/images/enter-icon.png" id="enterpic" class="hidden">!</h1>
-          <input class="form-control input-lg" type="text" placeholder="Spiderman" id="title">
+        <form id="search-form" ng-submit="findMovie()">
+          <h1>Type the movie name... then, hit <span id="enter">enter</span>!</h1>
+          <input class="form-control input-lg" type="text" placeholder="Spiderman" ng-model="title">
         </form>
 
-        <section id="loading" class="text-center">
+        <section class="col-xs-6 info">
+          <img ng-src="{{ poster }}">
         </section>
 
-        <section class="col-xs-6 hidden info">
-          <img id="poster">
-        </section>
-
-        <section class="col-xs-6 hidden info">
-          <ul id="details"></ul>
+        <section class="col-xs-6 info">
+          <ul id="details">
+            <li ng-repeat="attr in attrs">
+              <div class="col-xs-3">
+                {{ attr.key }}
+              </div>
+              <div class="col-xs-9">
+                {{ attr.value }}
+              </div>
+            </li>
+          </ul>
         </section>
       </div>
     </div>
