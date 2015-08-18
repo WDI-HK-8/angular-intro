@@ -1,0 +1,19 @@
+{
+  "name": "angular-intro",
+  "version": "0.0.1",
+  "authors": [
+    "Harry Chen <harry@harry.gg>"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.4"
+  }
+}
